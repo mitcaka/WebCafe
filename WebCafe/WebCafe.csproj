@@ -135,11 +135,12 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhaCungCapController.cs" />
-    <Compile Include="Areas\Admin\Controllers\SanPhamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanController.cs" />
     <Compile Include="Areas\Admin\Controllers\TinTucController.cs" />
     <Compile Include="Controllers\DangKyController.cs" />
     <Compile Include="Controllers\DangNhapController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -169,6 +170,7 @@
     <Compile Include="Models\LoaiSanPham.cs">
       <DependentUpon>QuanLyCaPhe.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoaiVaSoLuong.cs" />
     <Compile Include="Models\NhaCungCap.cs">
       <DependentUpon>QuanLyCaPhe.tt</DependentUpon>
     </Compile>
@@ -193,6 +195,7 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>QuanLyCaPhe.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ShopViewModel.cs" />
     <Compile Include="Models\StaticData.cs">
       <DependentUpon>QuanLyCaPhe.tt</DependentUpon>
     </Compile>
@@ -209,51 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\admin\css\upload_img.css" />
-    <Content Include="Assets\Home\css\aos.css" />
-    <Content Include="Assets\Home\css\bootstrap.min.css" />
-    <Content Include="Assets\Home\css\bootstrap\bootstrap-grid.css" />
-    <Content Include="Assets\Home\css\bootstrap\bootstrap-reboot.css" />
-    <Content Include="Assets\Home\css\jquery-ui.css" />
-    <Content Include="Assets\Home\css\login.css" />
-    <Content Include="Assets\Home\css\magnific-popup.css" />
-    <Content Include="Assets\Home\css\owl.carousel.min.css" />
-    <Content Include="Assets\Home\css\owl.theme.default.min.css" />
-    <Content Include="Assets\Home\css\style.css" />
-    <Content Include="Assets\Home\fonts\icomoon\demo-files\demo.css" />
-    <Content Include="Assets\Home\fonts\icomoon\demo-files\demo.js" />
-    <Content Include="Assets\Home\fonts\icomoon\demo.html" />
-    <Content Include="Assets\Home\fonts\icomoon\fonts\icomoon.svg" />
-    <Content Include="Assets\Home\fonts\icomoon\Read Me.txt" />
-    <Content Include="Assets\Home\fonts\icomoon\style.css" />
-    <Content Include="Assets\Home\images\bg01.1.jpg" />
-    <Content Include="Assets\Home\images\bg01.jpg" />
-    <Content Include="Assets\Home\images\bg02.jpg" />
-    <Content Include="Assets\Home\images\bg_1.jpg" />
-    <Content Include="Assets\Home\images\blog_1.jpg" />
-    <Content Include="Assets\Home\images\children.jpg" />
-    <Content Include="Assets\Home\images\cloth_1.jpg" />
-    <Content Include="Assets\Home\images\cloth_2.jpg" />
-    <Content Include="Assets\Home\images\cloth_3.jpg" />
-    <Content Include="Assets\Home\images\hero_1.jpg" />
-    <Content Include="Assets\Home\images\hero_1.png" />
-    <Content Include="Assets\Home\images\men.jpg" />
-    <Content Include="Assets\Home\images\person_1.jpg" />
-    <Content Include="Assets\Home\images\person_2.jpg" />
-    <Content Include="Assets\Home\images\person_3.jpg" />
-    <Content Include="Assets\Home\images\person_4.jpg" />
-    <Content Include="Assets\Home\images\shoe.png" />
-    <Content Include="Assets\Home\images\shoe_1.jpg" />
-    <Content Include="Assets\Home\images\women.jpg" />
-    <Content Include="Assets\Home\js\aos.js" />
-    <Content Include="Assets\Home\js\bootstrap.min.js" />
-    <Content Include="Assets\Home\js\jquery-3.3.1.min.js" />
-    <Content Include="Assets\Home\js\jquery-ui.js" />
-    <Content Include="Assets\Home\js\jquery.magnific-popup.min.js" />
-    <Content Include="Assets\Home\js\login.js" />
-    <Content Include="Assets\Home\js\main.js" />
-    <Content Include="Assets\Home\js\owl.carousel.min.js" />
-    <Content Include="Assets\Home\js\popper.min.js" />
-    <Content Include="Assets\Home\js\slick.min.js" />
     <Content Include="Assets\admin\css\app.min.css" />
     <Content Include="Assets\admin\css\bootstrap.min.css" />
     <Content Include="Assets\admin\css\icons.min.css" />
@@ -496,6 +454,51 @@
     <Content Include="Assets\admin\libs\twitter-bootstrap-wizard\prettify.css" />
     <Content Include="Assets\admin\libs\twitter-bootstrap-wizard\prettify.js" />
     <Content Include="Assets\admin\js\pages\upload_img.js" />
+    <Content Include="Assets\Home\css\aos.css" />
+    <Content Include="Assets\Home\css\bootstrap.min.css" />
+    <Content Include="Assets\Home\css\bootstrap\bootstrap-grid.css" />
+    <Content Include="Assets\Home\css\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Assets\Home\css\jquery-ui.css" />
+    <Content Include="Assets\Home\css\login.css" />
+    <Content Include="Assets\Home\css\magnific-popup.css" />
+    <Content Include="Assets\Home\css\owl.carousel.min.css" />
+    <Content Include="Assets\Home\css\owl.theme.default.min.css" />
+    <Content Include="Assets\Home\css\style.css" />
+    <Content Include="Assets\Home\fonts\icomoon\demo-files\demo.css" />
+    <Content Include="Assets\Home\fonts\icomoon\demo-files\demo.js" />
+    <Content Include="Assets\Home\fonts\icomoon\demo.html" />
+    <Content Include="Assets\Home\fonts\icomoon\fonts\icomoon.svg" />
+    <Content Include="Assets\Home\fonts\icomoon\Read Me.txt" />
+    <Content Include="Assets\Home\fonts\icomoon\style.css" />
+    <Content Include="Assets\Home\images\bg01.1.jpg" />
+    <Content Include="Assets\Home\images\bg01.jpg" />
+    <Content Include="Assets\Home\images\bg02.jpg" />
+    <Content Include="Assets\Home\images\bg_1.jpg" />
+    <Content Include="Assets\Home\images\blog_1.jpg" />
+    <Content Include="Assets\Home\images\children.jpg" />
+    <Content Include="Assets\Home\images\cloth_1.jpg" />
+    <Content Include="Assets\Home\images\cloth_2.jpg" />
+    <Content Include="Assets\Home\images\cloth_3.jpg" />
+    <Content Include="Assets\Home\images\hero_1.jpg" />
+    <Content Include="Assets\Home\images\hero_1.png" />
+    <Content Include="Assets\Home\images\men.jpg" />
+    <Content Include="Assets\Home\images\person_1.jpg" />
+    <Content Include="Assets\Home\images\person_2.jpg" />
+    <Content Include="Assets\Home\images\person_3.jpg" />
+    <Content Include="Assets\Home\images\person_4.jpg" />
+    <Content Include="Assets\Home\images\shoe.png" />
+    <Content Include="Assets\Home\images\shoe_1.jpg" />
+    <Content Include="Assets\Home\images\women.jpg" />
+    <Content Include="Assets\Home\js\aos.js" />
+    <Content Include="Assets\Home\js\bootstrap.min.js" />
+    <Content Include="Assets\Home\js\jquery-3.3.1.min.js" />
+    <Content Include="Assets\Home\js\jquery-ui.js" />
+    <Content Include="Assets\Home\js\jquery.magnific-popup.min.js" />
+    <Content Include="Assets\Home\js\login.js" />
+    <Content Include="Assets\Home\js\main.js" />
+    <Content Include="Assets\Home\js\owl.carousel.min.js" />
+    <Content Include="Assets\Home\js\popper.min.js" />
+    <Content Include="Assets\Home\js\slick.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -556,8 +559,7 @@
     <Content Include="Areas\Admin\Views\LoaiSanPham\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NhaCungCap\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NhaCungCap\SuaNhaCungCap.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPham\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPham\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLSanPham\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Alert.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LeftMenu.cshtml" />
@@ -575,6 +577,9 @@
     <Content Include="Models\QuanLyCaPhe.edmx.diagram">
       <DependentUpon>QuanLyCaPhe.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\LoaiSanPham\SuaLoai.cshtml" />
+    <Content Include="Areas\Admin\Views\QLSanPham\ThemMoi.cshtml" />
+    <Content Include="Areas\Admin\Views\QLSanPham\SuaSanPham.cshtml" />
     <Content Include="Assets\Home\fonts\icomoon\fonts\icomoon.eot" />
     <Content Include="Assets\Home\fonts\icomoon\fonts\icomoon.ttf" />
     <Content Include="Assets\Home\fonts\icomoon\fonts\icomoon.woff" />
@@ -656,7 +661,6 @@
     <Content Include="Assets\Home\scss\bootstrap\_popover.scss" />
     <Content Include="Assets\Home\scss\bootstrap\_print.scss" />
     <Content Include="Assets\Home\scss\bootstrap\_progress.scss" />
-    <Content Include="Assets\Home\scss\bootstrap\_reboot.scss" />
     <Content Include="Assets\Home\scss\bootstrap\_root.scss" />
     <Content Include="Assets\Home\scss\bootstrap\_tables.scss" />
     <Content Include="Assets\Home\scss\bootstrap\_tooltip.scss" />
@@ -668,9 +672,6 @@
     <Content Include="Assets\Home\scss\_site-base.scss" />
     <Content Include="Assets\Home\scss\_site-blocks.scss" />
     <Content Include="Assets\Home\scss\_site-navbar.scss" />
-    <Content Include="Areas\Admin\Views\LoaiSanPham\SuaLoai.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPham\ThemMoi.cshtml" />
-    <Content Include="Areas\Admin\Views\SanPham\SuaSanPham.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -696,6 +697,8 @@
     <Content Include="Views\TrangChu\Index.cshtml" />
     <Content Include="Views\DangKy\Index.cshtml" />
     <Content Include="Views\DangNhap\Index.cshtml" />
+    <Content Include="Views\SanPham\Index.cshtml" />
+    <Content Include="Views\SanPham\ChiTiet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

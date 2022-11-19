@@ -53,8 +53,8 @@ C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\System.Web.WebPages.Raz
 C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Newtonsoft.Json.xml
 C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Antlr3.Runtime.pdb
 C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.csproj.AssemblyReference.cache
 C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.csproj.CoreCompileInputs.cache
 C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.csproj.CopyComplete
 C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.dll
 C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.pdb
+C:\Users\ADMIN\Desktop\Báo cáo Web\WebCafe\WebCafe\obj\Debug\WebCafe.csproj.AssemblyReference.cache

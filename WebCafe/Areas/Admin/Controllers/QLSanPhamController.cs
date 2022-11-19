@@ -11,7 +11,7 @@ using WebCafe.Models;
 namespace WebCafe.Areas.Admin.Controllers
 {
     [AdminAuthorize]
-    public class SanPhamController : Controller
+    public class QLSanPhamController : Controller
     {
         // GET: Admin/SanPham
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();
@@ -25,6 +25,7 @@ namespace WebCafe.Areas.Admin.Controllers
         public ActionResult ThemMoi()
         {
             ViewBag.LoaiSanPham = db.LoaiSanPhams.ToList();
+            int i = 0;
             return View();
         }
 
@@ -69,7 +70,7 @@ namespace WebCafe.Areas.Admin.Controllers
                         RouteValueDictionary(
                         new
                         {
-                            controller = "SanPham",
+                            controller = "QLSanPham",
                             action = "Index",
                             area = "Admin"
                         }));
@@ -123,7 +124,7 @@ namespace WebCafe.Areas.Admin.Controllers
                         RouteValueDictionary(
                         new
                         {
-                            controller = "SanPham",
+                            controller = "QLSanPham",
                             action = "Index",
                             area = "Admin"
                         }));
@@ -139,7 +140,7 @@ namespace WebCafe.Areas.Admin.Controllers
                     RouteValueDictionary(
                     new
                     {
-                        controller = "SanPham",
+                        controller = "QLSanPham",
                         action = "Index",
                         area = "Admin"
                     }));
