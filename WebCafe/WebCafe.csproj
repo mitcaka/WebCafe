@@ -132,6 +132,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ErrorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GiamGiaController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhaCungCapController.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Areas\Admin\Controllers\TinTucController.cs" />
     <Compile Include="Controllers\DangKyController.cs" />
     <Compile Include="Controllers\DangNhapController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
     <Compile Include="Global.asax.cs">
@@ -149,6 +151,7 @@
       <DependentUpon>QuanLyCaPhe.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>QuanLyCaPhe.tt</DependentUpon>
     </Compile>
@@ -570,13 +573,6 @@
     <Content Include="Areas\Admin\Views\TinTuc\ThemTinTuc.cshtml" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Admin\Views\TaiKhoan\SuaTaiKhoan.cshtml" />
-    <EntityDeploy Include="Models\QuanLyCaPhe.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QuanLyCaPhe.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\QuanLyCaPhe.edmx.diagram">
-      <DependentUpon>QuanLyCaPhe.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\LoaiSanPham\SuaLoai.cshtml" />
     <Content Include="Areas\Admin\Views\QLSanPham\ThemMoi.cshtml" />
     <Content Include="Areas\Admin\Views\QLSanPham\SuaSanPham.cshtml" />
@@ -672,6 +668,13 @@
     <Content Include="Assets\Home\scss\_site-base.scss" />
     <Content Include="Assets\Home\scss\_site-blocks.scss" />
     <Content Include="Assets\Home\scss\_site-navbar.scss" />
+    <EntityDeploy Include="Models\QuanLyCaPhe.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QuanLyCaPhe.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\QuanLyCaPhe.edmx.diagram">
+      <DependentUpon>QuanLyCaPhe.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -699,11 +702,13 @@
     <Content Include="Views\DangNhap\Index.cshtml" />
     <Content Include="Views\SanPham\Index.cshtml" />
     <Content Include="Views\SanPham\ChiTiet.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\GiamGia\" />
     <Folder Include="Upload\loaisp\" />
     <Folder Include="Upload\sanpham\" />
   </ItemGroup>

@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="de41a7fd14104fe793adf71ceb44caac" Name="Diagram1">
+      <Diagram DiagramId="f40719cd379647e48073eff8bd586746" Name="Diagram1">
         <EntityTypeShape EntityType="QuanLyCaPheModel.Admin" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyCaPheModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyCaPheModel.ChiTietPhieuNhap" Width="1.5" PointX="8.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="QuanLyCaPheModel.DanhMuc" Width="1.5" PointX="5.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyCaPheModel.DanhMuc" Width="1.5" PointX="5.75" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyCaPheModel.DonDatHang" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyCaPheModel.GiamGia" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="QuanLyCaPheModel.KhachHang" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />

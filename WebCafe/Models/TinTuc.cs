@@ -20,6 +20,7 @@ namespace WebCafe.Models
         public string NoiDung { get; set; }
         public string Url_friendly { get; set; }
         public Nullable<int> MaDanhMuc { get; set; }
+        public string HinhAnh { get; set; }
     
         public virtual DanhMuc DanhMuc { get; set; }
     }

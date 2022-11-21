@@ -45,7 +45,15 @@ namespace WebCafe.Areas.Admin.Controllers
             sanPham.NguonGoc = sp.NguonGoc;
             sanPham.KhoiLuong = sp.KhoiLuong;
             sanPham.MaLoai = sp.MaLoai;
-            sanPham.DaXoa = sp.DaXoa;
+            
+            if (sp.DaXoa == null)
+            {
+                sanPham.DaXoa = false;
+            }
+            else
+            {
+                sanPham.DaXoa = sp.DaXoa;
+            }
             sanPham.Url_friendly = sp.Url_friendly;
             sanPham.HinhAnh = "";
             db.SanPhams.Add(sanPham);
@@ -100,7 +108,14 @@ namespace WebCafe.Areas.Admin.Controllers
             sanPham.NguonGoc = sp.NguonGoc;
             sanPham.KhoiLuong = sp.KhoiLuong;
             sanPham.MaLoai = sp.MaLoai;
-            sanPham.DaXoa = sp.DaXoa;
+            if (sp.DaXoa == null)
+            {
+                sanPham.DaXoa = false;
+            }
+            else
+            {
+                sanPham.DaXoa = sp.DaXoa;
+            }
             sanPham.Url_friendly = sp.Url_friendly;
             sanPham.HinhAnh = "";
             if (hinhAnh != null && hinhAnh.ContentLength > 0)

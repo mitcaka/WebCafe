@@ -158,6 +158,7 @@
     <Property Name="NoiDung" Type="ntext" />
     <Property Name="Url-friendly" Type="nvarchar" MaxLength="50" />
     <Property Name="MaDanhMuc" Type="int" />
+    <Property Name="HinhAnh" Type="text" />
   </EntityType>
   <Association Name="FK_ChiTietDonHang_DonDatHang">
     <End Role="DonDatHang" Type="Self.DonDatHang" Multiplicity="0..1" />

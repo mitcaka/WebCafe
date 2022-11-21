@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -59,7 +60,7 @@ namespace WebCafe.Controllers
             }
 
             //Paging
-            int NumOfRecordPerPage = 3;
+            int NumOfRecordPerPage = 6;
             int NumOfPage = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(SanPhams.Count) / NumOfRecordPerPage));
             int NumOfRecordToSkip = (page - 1) * NumOfRecordPerPage;
             ViewBag.Page = page;
@@ -73,7 +74,9 @@ namespace WebCafe.Controllers
         {
             SanPham sp = db.SanPhams.FirstOrDefault(x => x.MaSP == id);
             ViewBag.LoaiSanPham = db.LoaiSanPhams.ToList();
-
+            var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+            ViewBag.FormatTien = String.Format(info, "{0:0,0 vnđ}", sp.DonGia);
+            int i = 1;
             return View(sp);
         }
     }

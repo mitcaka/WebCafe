@@ -177,6 +177,7 @@
     <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Url_friendly" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaDanhMuc" Type="Int32" />
+    <Property Name="HinhAnh" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="DanhMuc" Relationship="Self.FK_TinTuc_DanhMuc" FromRole="TinTuc" ToRole="DanhMuc" />
   </EntityType>
   <Association Name="FK_ChiTietDonHang_DonDatHang">
