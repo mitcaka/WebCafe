@@ -50,9 +50,9 @@
           </Key>
           <Property Name="MaDDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NgayDat" Type="datetime" />
-          <Property Name="TinhTrangGiao" Type="nvarchar" MaxLength="50" />
+          <Property Name="TinhTrangGiao" Type="nvarchar" MaxLength="255" />
           <Property Name="NgayGiao" Type="datetime" />
-          <Property Name="DaThanhToan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DaThanhToan" Type="nvarchar" MaxLength="255" />
           <Property Name="MaKH" Type="int" />
           <Property Name="MaGiamGia" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -71,7 +71,7 @@
           </Key>
           <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenKH" Type="nvarchar" MaxLength="50" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
           <Property Name="DienThoai" Type="nvarchar" MaxLength="50" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" />
@@ -149,7 +149,7 @@
           <Property Name="TaiKhoan" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MatKhau" Type="nvarchar" MaxLength="50" />
           <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
-          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="255" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="DienThoai" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -397,9 +397,9 @@
           </Key>
           <Property Name="MaDDH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayDat" Type="DateTime" Precision="3" />
-          <Property Name="TinhTrangGiao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TinhTrangGiao" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="NgayGiao" Type="DateTime" Precision="3" />
-          <Property Name="DaThanhToan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DaThanhToan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="MaKH" Type="Int32" />
           <Property Name="MaGiamGia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ChiTietDonHangs" Relationship="Self.FK_ChiTietDonHang_DonDatHang" FromRole="DonDatHang" ToRole="ChiTietDonHang" />
@@ -422,7 +422,7 @@
           </Key>
           <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="DienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -509,7 +509,7 @@
           <Property Name="TaiKhoan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MatKhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DienThoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="KhachHangs" Relationship="Self.FK_KhachHang_ThanhVien" FromRole="ThanhVien" ToRole="KhachHang" />

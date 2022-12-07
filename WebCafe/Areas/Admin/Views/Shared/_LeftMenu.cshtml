@@ -28,7 +28,7 @@
                         <span>Quản lý bán hàng</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products.html">Quản lý đơn hàng</a></li>
+                        <li><a href="@Url.Action("Index","QLDonHang")">Quản lý đơn hàng</a></li>
                         <li><a href="@Url.Action("Index","GiamGia")">Tạo mã giảm giá</a></li>
                     </ul>
                 </li>
@@ -39,8 +39,8 @@
                         <span>Quản lý nhập hàng</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="crypto-wallet.html">Danh sách phiếu nhập</a></li>
-                        <li><a href="crypto-buy-sell.html">Tạo mới phiếu nhập</a></li>
+                        <li><a href="@Url.Action("Index","QLNhapHang")">Danh sách phiếu nhập</a></li>
+                        <li><a href="@Url.Action("TaoPhieuNhap","QLNhapHang")">Tạo mới phiếu nhập</a></li>
                         <li><a href="@Url.Action("Index","NhaCungCap")">Quản lý nhà cung cấp</a></li>
                     </ul>
                 </li>

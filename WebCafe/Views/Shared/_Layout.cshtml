@@ -16,6 +16,8 @@
     <!-- Icons Css -->
     <link href="~/Assets/admin/css/icons.min.css" rel="stylesheet" type="text/css">
 
+    <link href="~/Assets/admin/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
     <div class="site-wrap">
@@ -47,44 +49,40 @@
                                             </span>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right profile-dropdown" style="">
-                                            <!-- item-->
-                                            <div class="dropdown-header noti-title">
-                                                <h6 class="text-overflow m-0">Xin chào, <br> @Session["HoTenTV"]</h6>
-                                            </div>
-
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                <i class="mdi mdi-account-outline"></i>
-                                                <span>Profile</span>
-                                            </a>
-
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                <i class="mdi mdi-settings-outline"></i>
-                                                <span>Settings</span>
-                                            </a>
-
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                <i class="mdi mdi-lock-outline"></i>
-                                                <span>Lock Screen</span>
-                                            </a>
-
-                                            <div class="dropdown-divider"></div>
-
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                                <i class="mdi mdi-logout-variant"></i>
-                                                <span>Logout</span>
-                                            </a>
-
+                                            @if (Session["HoTenTV"] != null)
+                                            {
+                                                <!-- item-->
+                                                <div class="dropdown-header noti-title">
+                                                    <h6 class="text-overflow m-0">Xin chào, <br><span class="text-black"> @Session["HoTenTV"]</span></h6>
+                                                </div><!-- item--><a href="@Url.Action("CaiDat", "QuanLyTaiKhoan")" class="dropdown-item notify-item">
+                                                    <i class="mdi mdi-account-outline"></i>
+                                                    <span>Tài khoản</span>
+                                                </a><!-- item--><a href="@Url.Action("DonHang", "QuanLyTaiKhoan")" class="dropdown-item notify-item">
+                                                    <i class="mdi mdi-cart-outline"></i>
+                                                    <span>Đơn hàng</span>
+                                                </a><div class="dropdown-divider"></div><!-- item--><a href="@Url.Action("Logout", "DangNhap")" class="dropdown-item notify-item">
+                                                    <i class="mdi mdi-logout-variant"></i>
+                                                    <span>Đăng xuất</span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+                                                <div class="dropdown-header noti-title">
+                                                    <span>Bạn chưa đăng nhập </span>
+                                                    <a href="@Url.Action("Index", "DangNhap")" class="btn btn-outline-info">Đăng nhập</a>
+                                                </div>
+                                                <div class="dropdown-header noti-title">
+                                                    <span>Nếu chưa có tài khoản </span>
+                                                    <a href="@Url.Action("Index", "DangKy")" class="btn btn-outline-info">Đăng ký</a>
+                                                </div>
+                                            }
                                         </div>
-                                    </li>
+</li>
                                     <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
                                     <li>
                                         <a href="@Url.Action("Index","GioHang")" class="site-cart">
                                             <span class="icon icon-shopping_cart"></span>
-                                            @if(Session["count"] != null) { 
+                                            @if(Session["count"] != null && Session["cart"] != null) { 
                                             <span class="count" id="CartCount">@Session["count"]</span>
                                             }
                                         </a>

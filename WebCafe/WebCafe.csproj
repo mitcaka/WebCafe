@@ -136,14 +136,19 @@
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoaiSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\NhaCungCapController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLDonHangController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QLNhapHangController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLSanPhamController.cs" />
     <Compile Include="Areas\Admin\Controllers\TaiKhoanController.cs" />
     <Compile Include="Areas\Admin\Controllers\TinTucController.cs" />
     <Compile Include="Controllers\DangKyController.cs" />
     <Compile Include="Controllers\DangNhapController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\QuanLyTaiKhoanController.cs" />
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
+    <Compile Include="Controllers\WarningController.cs" />
+    <Compile Include="Controllers\XacNhanThanhToanController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +216,9 @@
     <Compile Include="Models\TinTuc.cs">
       <DependentUpon>QuanLyCaPhe.tt</DependentUpon>
     </Compile>
+    <Compile Include="Other\PayCompare.cs" />
+    <Compile Include="Other\PayLib.cs" />
+    <Compile Include="Other\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -494,6 +502,7 @@
     <Content Include="Assets\Home\images\women.jpg" />
     <Content Include="Assets\Home\js\aos.js" />
     <Content Include="Assets\Home\js\bootstrap.min.js" />
+    <Content Include="Assets\Home\js\apiprovince.js" />
     <Content Include="Assets\Home\js\jquery-3.3.1.min.js" />
     <Content Include="Assets\Home\js\jquery-ui.js" />
     <Content Include="Assets\Home\js\jquery.magnific-popup.min.js" />
@@ -668,6 +677,7 @@
     <Content Include="Assets\Home\scss\_site-base.scss" />
     <Content Include="Assets\Home\scss\_site-blocks.scss" />
     <Content Include="Assets\Home\scss\_site-navbar.scss" />
+    <Content Include="Areas\Admin\Views\QLDonHang\Index.cshtml" />
     <EntityDeploy Include="Models\QuanLyCaPhe.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QuanLyCaPhe.Designer.cs</LastGenOutput>
@@ -675,6 +685,8 @@
     <Content Include="Models\QuanLyCaPhe.edmx.diagram">
       <DependentUpon>QuanLyCaPhe.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\QLNhapHang\TaoPhieuNhap.cshtml" />
+    <Content Include="Areas\Admin\Views\QLNhapHang\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -703,6 +715,14 @@
     <Content Include="Views\SanPham\Index.cshtml" />
     <Content Include="Views\SanPham\ChiTiet.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\GioHang\ThanhToan.cshtml" />
+    <Content Include="Views\XacNhanThanhToan\Index.cshtml" />
+    <Content Include="Views\XacNhanThanhToan\PaymentConfirm.cshtml" />
+    <Content Include="Views\QuanLyTaiKhoan\CaiDat.cshtml" />
+    <Content Include="Views\QuanLyTaiKhoan\DonHang.cshtml" />
+    <Content Include="Views\QuanLyTaiKhoan\Index.cshtml" />
+    <Content Include="Views\Warning\Lỗi.cshtml" />
+    <Content Include="Views\QuanLyTaiKhoan\SuaTaiKhoanTV.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -63,7 +63,7 @@
                                         <div class="card-title"><h4><a href="/SanPham/ChiTiet/@item.MaSP" class="text-black">@item.TenSP</a> </h4></div>
                                         <span class="card-text font-italic">@item.LoaiSanPham.TenLoai - @item.NguonGoc</span>
                                         @*<p class="card-text text-black font-weight-bold">@item.DonGia.ToString("#,##") đ - @item.KhoiLuong g</p>*@
-                                        <p class="card-text text-black font-weight-bold">@item.DonGia đ - @item.KhoiLuong g</p>
+                                    <p class="card-text text-black font-weight-bold">@String.Format("{0:0,0 vnđ}", item.DonGia) - @item.KhoiLuong g</p>
                                         <a href="#" class="btn btn-warning"><i class="mdi mdi-cart-outline"></i> Thêm vào giỏ</a><br />
 
                                     </div>

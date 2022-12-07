@@ -11,10 +11,15 @@ namespace WebCafe.Controllers
     public class GioHangController : Controller
     {
         QuanLyCaPheEntities db = new QuanLyCaPheEntities();
-
+        private double giaTri;
+        int i = 0;
         // GET: GioHang
         public ActionResult Index()
         {
+            if(giaTri != null)
+            {
+                ViewBag.GiaTri = giaTri;
+            }
             return View((List<CartModel>)Session["cart"]);
         }
 
@@ -60,13 +65,7 @@ namespace WebCafe.Controllers
                 }
             }
             Session["cart"] = cart;
-            return new RedirectToRouteResult(new
-                        RouteValueDictionary(
-                        new
-                        {
-                            controller = "GioHang",
-                            action = "Index"
-                        }));
+            return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
         }
 
         private int isExist(int id)
@@ -86,6 +85,52 @@ namespace WebCafe.Controllers
             Session["cart"] = li;
             Session["count"] = Convert.ToInt32(Session["count"]) - 1;
             return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
+        }
+
+        public ActionResult AddCoupon(string Ma)
+        {
+            List<WebCafe.Models.GiamGia> giamGias = db.GiamGias.Where(x => x.active == true).ToList();
+            if(Session["TaiKhoanTV"] != null)
+            {
+                foreach (GiamGia item in giamGias)
+                {
+                    if(item.MaGiamGia == Ma)
+                    {
+                        giaTri = (double)item.GiaTri;
+                        Session["MaGiamGia"] = (string)item.MaGiamGia;
+                        Session["GiaTri"] = (double)item.GiaTri;
+
+                        return Json(new {GiaTri = giaTri , Message = "Thêm mã giảm giá hành công", JsonRequestBehavior.AllowGet });
+                    }
+                    else
+                    {
+                        return Json(new { GiaTri = 0, Message = "Mã giảm giá không hợp lệ", JsonRequestBehavior.DenyGet });
+                    }
+                }
+            }
+            else
+            {
+                return Json(new { GiaTri = 0, Message = "Bạn chưa đăng nhập", JsonRequestBehavior.DenyGet });
+            }
+            return Json(new { Message = "Thành công", JsonRequestBehavior.AllowGet });
+        }
+
+        public ActionResult ThanhToan()
+        {
+            return View((List<CartModel>)Session["cart"]);
+        }
+
+        public ActionResult InfoAccount(string MaTV)
+        {
+            WebCafe.Models.ThanhVien thanhViens = db.ThanhViens.Where(x => x.TaiKhoan == MaTV).FirstOrDefault();
+            if(thanhViens != null)
+            {
+                return Json(new { TaiKhoan = thanhViens.TaiKhoan,HoTen = thanhViens.HoTen,DiaChi = thanhViens.DiaChi,Email = thanhViens.Email,DienThoai = thanhViens.DienThoai, JsonRequestBehavior.AllowGet });
+            }
+            else
+            {
+                return Json(new { Message = "Bạn chưa đăng nhập!!!!", JsonRequestBehavior.AllowGet });
+            }
         }
     }
 }

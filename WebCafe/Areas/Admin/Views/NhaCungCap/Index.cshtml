@@ -2,7 +2,12 @@
 
 @{ ViewBag.Title = "Index";
                 Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
-
+<style>
+    .selected {
+        background-color: brown;
+        color: #FFF;
+    }
+</style>
 <div class="row mb-2">
     <div class="col-sm-4">
         <h4 class="card-title">Danh sách nhà cung cấp</h4>
@@ -167,6 +172,7 @@
             })
 
         })
+       
     </script>
 }
 

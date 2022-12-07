@@ -41,7 +41,7 @@ namespace WebCafe.Controllers
             else
             {
                 TempData["Error"] = "Thông tin tài khoản hoặc mật khẩu không đúng!";
-                return RedirectToAction("DangNhap");
+                return RedirectToAction("Index");
             }
         }
 
@@ -58,6 +58,12 @@ namespace WebCafe.Controllers
 
             }
             return byte2String;
+        }
+
+        public ActionResult Logout()
+        {
+            Session.Clear();//remove session
+            return RedirectToAction("Index");
         }
     }
 }

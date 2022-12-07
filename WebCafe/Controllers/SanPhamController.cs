@@ -73,6 +73,8 @@ namespace WebCafe.Controllers
         public ActionResult ChiTiet(int id)
         {
             SanPham sp = db.SanPhams.FirstOrDefault(x => x.MaSP == id);
+            sp.LuotXem += 1;
+            db.SaveChanges();
             ViewBag.LoaiSanPham = db.LoaiSanPhams.ToList();
             var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
             ViewBag.FormatTien = String.Format(info, "{0:0,0 vnđ}", sp.DonGia);
